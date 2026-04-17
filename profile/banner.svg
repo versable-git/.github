@@ -1,36 +1,92 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" width="900" height="180">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#4F46E5;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    <!-- Ambient glows -->
+    <radialGradient id="glow-bl" cx="0%" cy="100%" r="55%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#00AEE0" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00AEE0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-tr" cx="100%" cy="0%" r="45%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#8FFBD1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#8FFBD1" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Logo mark gradients (userSpaceOnUse coords match paths in the scaled <g>) -->
+    <linearGradient id="vmark-cyan" x1="0" y1="38.36" x2="83.8" y2="38.36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00AEE0"/>
+      <stop offset="1" stop-color="#00AEE0" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="shine" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.08" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.08" />
+    <linearGradient id="vmark-mint" x1="83.8" y1="57.59" x2="0" y2="57.59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8FFBD1"/>
+      <stop offset="1" stop-color="#8FFBD1" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Separator accent -->
+    <linearGradient id="sep-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00AEE0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8FFBD1" stop-opacity="0.2"/>
     </linearGradient>
   </defs>
-  <rect width="900" height="180" fill="url(#bg)" rx="12"/>
-  <rect width="900" height="180" fill="url(#shine)" rx="12"/>
-  <circle cx="820" cy="30" r="80" fill="#ffffff" fill-opacity="0.04"/>
-  <circle cx="860" cy="160" r="60" fill="#ffffff" fill-opacity="0.04"/>
-  <circle cx="60" cy="150" r="70" fill="#ffffff" fill-opacity="0.04"/>
-  <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-    <circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity="0.06"/>
+
+  <!-- Background: deep navy -->
+  <rect width="900" height="220" fill="#0B1929"/>
+  <!-- Ambient glows -->
+  <rect width="900" height="220" fill="url(#glow-bl)"/>
+  <rect width="900" height="220" fill="url(#glow-tr)"/>
+
+  <!-- Subtle dot texture -->
+  <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="1.5" cy="1.5" r="1" fill="#FFFFFF" fill-opacity="0.025"/>
   </pattern>
-  <rect width="900" height="180" fill="url(#dots)" rx="12"/>
-  <rect x="40" y="40" width="4" height="100" fill="#60A5FA" rx="2"/>
-  <text x="64" y="85" font-family="'SF Pro Display', 'Segoe UI', system-ui, sans-serif"
-        font-size="52" font-weight="800" fill="#ffffff" letter-spacing="-1">Versable</text>
-  <rect x="64" y="95" width="220" height="3" fill="#60A5FA" rx="1.5" fill-opacity="0.7"/>
-  <text x="64" y="125" font-family="'SF Pro Display', 'Segoe UI', system-ui, sans-serif"
-        font-size="16" font-weight="400" fill="#BFDBFE" letter-spacing="0.3">AI-Powered Data Enhancement for the Automotive Aftermarket</text>
-  <text x="64" y="152" font-family="'SF Pro Display', 'Segoe UI', system-ui, sans-serif"
-        font-size="13" font-weight="300" fill="#93C5FD" letter-spacing="0.5" font-style="italic">Supercharge your product data to help you sell</text>
-  <rect x="720" y="62" width="148" height="32" fill="#ffffff" fill-opacity="0.12" rx="16"/>
-  <text x="794" y="83" font-family="'SF Pro Display', 'Segoe UI', system-ui, sans-serif"
-        font-size="12" font-weight="600" fill="#FCD34D" text-anchor="middle" letter-spacing="0.5">Y Combinator Backed</text>
-  <rect x="720" y="104" width="148" height="32" fill="#ffffff" fill-opacity="0.12" rx="16"/>
-  <text x="794" y="125" font-family="'SF Pro Display', 'Segoe UI', system-ui, sans-serif"
-        font-size="12" font-weight="600" fill="#A5F3FC" text-anchor="middle" letter-spacing="0.5">ACES / PIES Compliant</text>
+  <rect width="900" height="220" fill="url(#dots)"/>
+
+  <!-- Left accent bar -->
+  <rect x="36" y="52" width="3" height="116" fill="url(#sep-grad)" rx="1.5"/>
+
+  <!-- Logo icon mark — original viewBox 0 0 84 83, scaled 0.85x → ~71×71 -->
+  <g transform="translate(52, 75) scale(0.86)">
+    <path d="M83.6776 63.6726H74.3579C74.3579 63.6726 83.801 63.7933 83.8014 63.8364L0.110037 44.3133C0.0366794 35.6405 0 46.0425 0 36.5765C0 28.4124 0.0279263 20.5327 0.0837781 12.929H83.7197C83.7739 20.5327 83.801 28.4124 83.801 36.5765C83.801 43.732 83.7598 52.7669 83.6776 63.6726Z" fill="url(#vmark-cyan)"/>
+    <path d="M0.124115 32.67H9.44386C9.44386 32.67 0.000732422 32.5511 0.000312805 32.5087L83.6917 51.7314C83.7651 60.2708 83.8018 50.0288 83.8018 59.3492C83.8018 67.3877 83.7738 75.1461 83.718 82.6329H0.082016C0.027832 75.1461 0.000732422 67.3877 0.000732422 59.3492C0.000732422 52.3037 0.0419998 43.4079 0.124115 32.67Z" fill="url(#vmark-mint)"/>
+  </g>
+
+  <!-- Wordmark: "Versable" in white — Inter/system-ui -->
+  <text x="132" y="129"
+        font-family="Inter, 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif"
+        font-size="60" font-weight="800" fill="#FFFFFF" letter-spacing="-2.5">Versable</text>
+
+  <!-- Cyan underline separator -->
+  <rect x="132" y="142" width="360" height="2" fill="url(#sep-grad)" rx="1"/>
+
+  <!-- Tagline -->
+  <text x="132" y="168"
+        font-family="Inter, 'SF Pro Display', system-ui, sans-serif"
+        font-size="15.5" font-weight="400" fill="#7EC8DC" letter-spacing="0.2">
+    AI-Powered Data Enhancement for the Automotive Aftermarket
+  </text>
+
+  <!-- Sub-tagline -->
+  <text x="132" y="190"
+        font-family="Inter, 'SF Pro Display', system-ui, sans-serif"
+        font-size="12.5" font-weight="300" fill="#3D7A8A" letter-spacing="0.6" font-style="italic">
+    Supercharge your product data to help you sell
+  </text>
+
+  <!-- Right badges -->
+  <!-- Y Combinator -->
+  <rect x="672" y="72" width="192" height="36" rx="18" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="768" y="95" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#FCD34D" letter-spacing="0.3">
+    Y Combinator Backed
+  </text>
+
+  <!-- LinkedIn -->
+  <rect x="672" y="118" width="192" height="36" rx="18" fill="#FFFFFF" fill-opacity="0.06" stroke="#0A66C2" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="768" y="141" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#60A5FA" letter-spacing="0.3">
+    LinkedIn
+  </text>
+
+  <!-- ACES/PIES -->
+  <rect x="672" y="164" width="192" height="36" rx="18" fill="#FFFFFF" fill-opacity="0.06" stroke="#00AEE0" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="768" y="187" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#8FFBD1" letter-spacing="0.3">
+    ACES / PIES Compliant
+  </text>
 </svg>
